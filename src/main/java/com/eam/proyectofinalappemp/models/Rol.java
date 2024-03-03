@@ -1,23 +1,24 @@
 package com.eam.proyectofinalappemp.models;
 
+import java.util.List;
+
 import jakarta.persistence.*;
 
 @Entity
-@Table(name = "cities")
-public class City extends BaseEntity{
+@Table(name = "rol")
+public class Rol extends BaseEntity {
 
 	@Column(name = "name")
 	private String name;
 
-	@ManyToOne
-	@JoinColumn(name = "department_id", referencedColumnName = "id")
-	private Department department;
+	@OneToMany(mappedBy = "rol")
+	private List<User> users;
 
-	public City() {
+	public Rol() {
 
 	}
 
-	public City(String name) {
+	public Rol(String name) {
 		this.name = name;
 	}
 

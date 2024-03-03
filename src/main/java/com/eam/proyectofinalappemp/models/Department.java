@@ -6,11 +6,7 @@ import jakarta.persistence.*;
 
 @Entity
 @Table(name = "departments")
-public class Department {
-
-	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private Long id;
+public class Department extends BaseEntity{
 
 	@Column(name = "name")
 	private String name;
@@ -32,10 +28,6 @@ public class Department {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public Long getId() {
-		return id;
 	}
 
 }
